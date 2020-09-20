@@ -15,7 +15,7 @@ web3.eth.getAccounts().then((accounts) => {
     getReceiverSender()
 })
 
-let abi = JSON.parse(fs.readFileSync('Account_sol_Account.abi').toString())
+let abi = JSON.parse(fs.readFileSync('bin/contracts/Account.abi').toString())
 
 let contract = new web3.eth.Contract(abi);
 contract.options.address = "0xb7Bdd1Fe9cDBF4Ae46CF4e8cc2fa306772160eD8"

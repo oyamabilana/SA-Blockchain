@@ -39,13 +39,7 @@
             "type": "function"
         },
         {
-            "inputs": [
-                {
-                    "internalType": "string",
-                    "name": "_transactionHash",
-                    "type": "string"
-                }
-            ],
+            "inputs": [],
             "name": "getReason",
             "outputs": [
                 {
@@ -115,24 +109,24 @@
             "type": "function"
         }
     ],
-    "metadata": "{\"compiler\":{\"version\":\"0.7.1+commit.f4a555be\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes15\",\"name\":\"_bankAccount\",\"type\":\"bytes15\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBankAccount\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_transactionHash\",\"type\":\"string\"}],\"name\":\"getReason\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReceiverSenderBankAccount\",\"outputs\":[{\"internalType\":\"bytes15\",\"name\":\"\",\"type\":\"bytes15\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"setBalance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_transactionrReason\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_transactionHash\",\"type\":\"string\"}],\"name\":\"setReason\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes15\",\"name\":\"_receiverSenderBankAccount\",\"type\":\"bytes15\"}],\"name\":\"setReceiverSenderBankAccount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/oyama/YIC Blockchain project/Account.sol\":\"Account\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/oyama/YIC Blockchain project/Account.sol\":{\"keccak256\":\"0x812f3dee430be8a563164e01005c97a3724c62e22b052ba9a67df01362b4437d\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://0e78aadcdb96bfb27b3e85724166836b336c787a15120ac61e92f34f4eb4f74f\",\"dweb:/ipfs/QmRVbEx5sFJzsfH1RH1zQLmjeVahXTdQ4o2Z3A76rQq5Gp\"]}},\"version\":1}",
-    "bytecode": "608060405234801561001057600080fd5b5060405161058f38038061058f8339818101604052602081101561003357600080fd5b50516000805460889290921c6001600160781b031990921691909117905561052f806100606000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80638baa14f41161005b5780638baa14f4146101d3578063cc099e7b146102ee578063d8284f6314610315578063fb1669ca1461033a5761007d565b806312065fe01461008257806318e0747b1461009c57806319e4540b146101cb575b600080fd5b61008a610357565b60408051918252519081900360200190f35b6101c9600480360360408110156100b257600080fd5b8101906020810181356401000000008111156100cd57600080fd5b8201836020820111156100df57600080fd5b8035906020019184600183028401116401000000008311171561010157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561015457600080fd5b82018360208201111561016657600080fd5b8035906020019184600183028401116401000000008311171561018857600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061035d945050505050565b005b61008a610389565b610279600480360360208110156101e957600080fd5b81019060208101813564010000000081111561020457600080fd5b82018360208201111561021657600080fd5b8035906020019184600183028401116401000000008311171561023857600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061039c945050505050565b6040805160208082528351818301528351919283929083019185019080838360005b838110156102b357818101518382015260200161029b565b50505050905090810190601f1680156102e05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101c96004803603602081101561030457600080fd5b50356001600160881b031916610434565b61031d610458565b604080516001600160881b03199092168252519081900360200190f35b6101c96004803603602081101561035057600080fd5b5035610461565b60015490565b8151610370906003906020850190610466565b508051610384906004906020840190610466565b505050565b60005460881b6001600160881b03191690565b60038054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156104285780601f106103fd57610100808354040283529160200191610428565b820191906000526020600020905b81548152906001019060200180831161040b57829003601f168201915b50505050509050919050565b600280546effffffffffffffffffffffffffffff191660889290921c919091179055565b60025460881b90565b600155565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106104a757805160ff19168380011785556104d4565b828001600101855582156104d4579182015b828111156104d45782518255916020019190600101906104b9565b506104e09291506104e4565b5090565b5b808211156104e057600081556001016104e556fea2646970667358221220020afac5b4a49ab0bbc550519e09fd0feaa68222202b6bf164c287fad3d6152c64736f6c63430007010033",
-    "deployedBytecode": "608060405234801561001057600080fd5b506004361061007d5760003560e01c80638baa14f41161005b5780638baa14f4146101d3578063cc099e7b146102ee578063d8284f6314610315578063fb1669ca1461033a5761007d565b806312065fe01461008257806318e0747b1461009c57806319e4540b146101cb575b600080fd5b61008a610357565b60408051918252519081900360200190f35b6101c9600480360360408110156100b257600080fd5b8101906020810181356401000000008111156100cd57600080fd5b8201836020820111156100df57600080fd5b8035906020019184600183028401116401000000008311171561010157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561015457600080fd5b82018360208201111561016657600080fd5b8035906020019184600183028401116401000000008311171561018857600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061035d945050505050565b005b61008a610389565b610279600480360360208110156101e957600080fd5b81019060208101813564010000000081111561020457600080fd5b82018360208201111561021657600080fd5b8035906020019184600183028401116401000000008311171561023857600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061039c945050505050565b6040805160208082528351818301528351919283929083019185019080838360005b838110156102b357818101518382015260200161029b565b50505050905090810190601f1680156102e05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101c96004803603602081101561030457600080fd5b50356001600160881b031916610434565b61031d610458565b604080516001600160881b03199092168252519081900360200190f35b6101c96004803603602081101561035057600080fd5b5035610461565b60015490565b8151610370906003906020850190610466565b508051610384906004906020840190610466565b505050565b60005460881b6001600160881b03191690565b60038054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156104285780601f106103fd57610100808354040283529160200191610428565b820191906000526020600020905b81548152906001019060200180831161040b57829003601f168201915b50505050509050919050565b600280546effffffffffffffffffffffffffffff191660889290921c919091179055565b60025460881b90565b600155565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106104a757805160ff19168380011785556104d4565b828001600101855582156104d4579182015b828111156104d45782518255916020019190600101906104b9565b506104e09291506104e4565b5090565b5b808211156104e057600081556001016104e556fea2646970667358221220020afac5b4a49ab0bbc550519e09fd0feaa68222202b6bf164c287fad3d6152c64736f6c63430007010033",
-    "sourceMap": "1158:2165:0:-:0;;;1654:78;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;1654:78:0;1699:11;:26;;;;;;;-1:-1:-1;;;;;;1699:26:0;;;;;;;;;1158:2165;;;;;;",
-    "deployedSourceMap": "1158:2165:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2382:77;;;:::i;:::-;;;;;;;;;;;;;;;;2714:193;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2714:193:0;;;;;;;;-1:-1:-1;2714:193:0;;-1:-1:-1;;2714:193:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2714:193:0;;-1:-1:-1;2714:193:0;;-1:-1:-1;;;;;2714:193:0:i;:::-;;1821:89;;;:::i;2913:126::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2913:126:0;;-1:-1:-1;2913:126:0;;-1:-1:-1;;;;;2913:126:0:i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3045:152;;;;;;;;;;;;;;;;-1:-1:-1;3045:152:0;-1:-1:-1;;;;;;3045:152:0;;:::i;3203:118::-;;;:::i;:::-;;;;-1:-1:-1;;;;;;3203:118:0;;;;;;;;;;;;;;2302:74;;;;;;;;;;;;;;;;-1:-1:-1;2302:74:0;;:::i;2382:77::-;2446:6;;2382:77;:::o;2714:193::-;2815:39;;;;:17;;:39;;;;;:::i;:::-;-1:-1:-1;2864:36:0;;;;:15;;:36;;;;;:::i;:::-;;2714:193;;:::o;1821:89::-;1867:7;1892:11;;;-1:-1:-1;;;;;;1885:18:0;;1821:89::o;2913:126::-;3015:17;3008:24;;;;;;;;-1:-1:-1;;3008:24:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2984:13;;3008:24;;3015:17;;3008:24;;3015:17;3008:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2913:126;;;:::o;3045:152::-;3136:25;:54;;-1:-1:-1;;3136:54:0;;;;;;;;;;;;3045:152::o;3203:118::-;3289:25;;;;3203:118;:::o;2302:74::-;2353:6;:16;2302:74::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;",
-    "sourcePath": "/home/oyama/YIC Blockchain project/Account.sol",
+    "metadata": "{\"compiler\":{\"version\":\"0.7.1+commit.f4a555be\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes15\",\"name\":\"_bankAccount\",\"type\":\"bytes15\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBankAccount\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReason\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReceiverSenderBankAccount\",\"outputs\":[{\"internalType\":\"bytes15\",\"name\":\"\",\"type\":\"bytes15\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"setBalance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_transactionrReason\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_transactionHash\",\"type\":\"string\"}],\"name\":\"setReason\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes15\",\"name\":\"_receiverSenderBankAccount\",\"type\":\"bytes15\"}],\"name\":\"setReceiverSenderBankAccount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/oyama/YIC Blockchain project/contracts/Account.sol\":\"Account\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/oyama/YIC Blockchain project/contracts/Account.sol\":{\"keccak256\":\"0x9ceef2ce9ea5c87bab9b95d7f4c4a6a4fb5d342f83f648f0c690224ddb32d184\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://6801a2b95b2ce46694678bd092e635b30733c6de09eea707d8139506ce9520e6\",\"dweb:/ipfs/Qmc3pXS2nF657qyAnr1TEQ9PKkdLDUKcfY8ToMXy6FD5de\"]}},\"version\":1}",
+    "bytecode": "608060405234801561001057600080fd5b506040516104ef3803806104ef8339818101604052602081101561003357600080fd5b50516000805460889290921c6001600160781b031990921691909117905561048f806100606000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80637d25e39d1161005b5780637d25e39d146101d3578063cc099e7b14610250578063d8284f6314610277578063fb1669ca1461029c5761007d565b806312065fe01461008257806318e0747b1461009c57806319e4540b146101cb575b600080fd5b61008a6102b9565b60408051918252519081900360200190f35b6101c9600480360360408110156100b257600080fd5b8101906020810181356401000000008111156100cd57600080fd5b8201836020820111156100df57600080fd5b8035906020019184600183028401116401000000008311171561010157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561015457600080fd5b82018360208201111561016657600080fd5b8035906020019184600183028401116401000000008311171561018857600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506102bf945050505050565b005b61008a6102eb565b6101db6102fe565b6040805160208082528351818301528351919283929083019185019080838360005b838110156102155781810151838201526020016101fd565b50505050905090810190601f1680156102425780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101c96004803603602081101561026657600080fd5b50356001600160881b031916610394565b61027f6103b8565b604080516001600160881b03199092168252519081900360200190f35b6101c9600480360360208110156102b257600080fd5b50356103c1565b60015490565b81516102d29060039060208501906103c6565b5080516102e69060049060208401906103c6565b505050565b60005460881b6001600160881b03191690565b60038054604080516020601f600260001961010060018816150201909516949094049384018190048102820181019092528281526060939092909183018282801561038a5780601f1061035f5761010080835404028352916020019161038a565b820191906000526020600020905b81548152906001019060200180831161036d57829003601f168201915b5050505050905090565b600280546effffffffffffffffffffffffffffff191660889290921c919091179055565b60025460881b90565b600155565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040757805160ff1916838001178555610434565b82800160010185558215610434579182015b82811115610434578251825591602001919060010190610419565b50610440929150610444565b5090565b5b80821115610440576000815560010161044556fea2646970667358221220d6ec5bb47a2a5eb8d94fad1f36ad1af7f2dd11f528823e46bb5651e7b3f2aa8a64736f6c63430007010033",
+    "deployedBytecode": "608060405234801561001057600080fd5b506004361061007d5760003560e01c80637d25e39d1161005b5780637d25e39d146101d3578063cc099e7b14610250578063d8284f6314610277578063fb1669ca1461029c5761007d565b806312065fe01461008257806318e0747b1461009c57806319e4540b146101cb575b600080fd5b61008a6102b9565b60408051918252519081900360200190f35b6101c9600480360360408110156100b257600080fd5b8101906020810181356401000000008111156100cd57600080fd5b8201836020820111156100df57600080fd5b8035906020019184600183028401116401000000008311171561010157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561015457600080fd5b82018360208201111561016657600080fd5b8035906020019184600183028401116401000000008311171561018857600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506102bf945050505050565b005b61008a6102eb565b6101db6102fe565b6040805160208082528351818301528351919283929083019185019080838360005b838110156102155781810151838201526020016101fd565b50505050905090810190601f1680156102425780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101c96004803603602081101561026657600080fd5b50356001600160881b031916610394565b61027f6103b8565b604080516001600160881b03199092168252519081900360200190f35b6101c9600480360360208110156102b257600080fd5b50356103c1565b60015490565b81516102d29060039060208501906103c6565b5080516102e69060049060208401906103c6565b505050565b60005460881b6001600160881b03191690565b60038054604080516020601f600260001961010060018816150201909516949094049384018190048102820181019092528281526060939092909183018282801561038a5780601f1061035f5761010080835404028352916020019161038a565b820191906000526020600020905b81548152906001019060200180831161036d57829003601f168201915b5050505050905090565b600280546effffffffffffffffffffffffffffff191660889290921c919091179055565b60025460881b90565b600155565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040757805160ff1916838001178555610434565b82800160010185558215610434579182015b82811115610434578251825591602001919060010190610419565b50610440929150610444565b5090565b5b80821115610440576000815560010161044556fea2646970667358221220d6ec5bb47a2a5eb8d94fad1f36ad1af7f2dd11f528823e46bb5651e7b3f2aa8a64736f6c63430007010033",
+    "sourceMap": "1158:2169:0:-:0;;;1654:78;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;1654:78:0;1699:11;:26;;;;;;;-1:-1:-1;;;;;;1699:26:0;;;;;;;;;1158:2169;;;;;;",
+    "deployedSourceMap": "1158:2169:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2382:77;;;:::i;:::-;;;;;;;;;;;;;;;;2714:193;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2714:193:0;;;;;;;;-1:-1:-1;2714:193:0;;-1:-1:-1;;2714:193:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2714:193:0;;-1:-1:-1;2714:193:0;;-1:-1:-1;;;;;2714:193:0:i;:::-;;1821:89;;;:::i;2913:130::-;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3049:152;;;;;;;;;;;;;;;;-1:-1:-1;3049:152:0;-1:-1:-1;;;;;;3049:152:0;;:::i;3207:118::-;;;:::i;:::-;;;;-1:-1:-1;;;;;;3207:118:0;;;;;;;;;;;;;;2302:74;;;;;;;;;;;;;;;;-1:-1:-1;2302:74:0;;:::i;2382:77::-;2446:6;;2382:77;:::o;2714:193::-;2815:39;;;;:17;;:39;;;;;:::i;:::-;-1:-1:-1;2864:36:0;;;;:15;;:36;;;;;:::i;:::-;;2714:193;;:::o;1821:89::-;1867:7;1892:11;;;-1:-1:-1;;;;;;1885:18:0;;1821:89::o;2913:130::-;3019:17;3012:24;;;;;;;;-1:-1:-1;;3012:24:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2988:13;;3012:24;;3019:17;;3012:24;;3019:17;3012:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2913:130;:::o;3049:152::-;3140:25;:54;;-1:-1:-1;;3140:54:0;;;;;;;;;;;;3049:152::o;3207:118::-;3293:25;;;;3207:118;:::o;2302:74::-;2353:6;:16;2302:74::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;",
+    "sourcePath": "/home/oyama/YIC Blockchain project/contracts/Account.sol",
     "compiler": {
         "name": "solc",
         "version": "0.7.1+commit.f4a555be"
     },
     "ast": {
-        "absolutePath": "/home/oyama/YIC Blockchain project/Account.sol",
+        "absolutePath": "/home/oyama/YIC Blockchain project/contracts/Account.sol",
         "exportedSymbols": {
             "Account": [
-                92
+                90
             ]
         },
-        "id": 93,
+        "id": 91,
         "license": "GPL-3.0",
         "nodeType": "SourceUnit",
         "nodes": [
@@ -153,9 +147,9 @@
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "fullyImplemented": true,
-                "id": 92,
+                "id": 90,
                 "linearizedBaseContracts": [
-                    92
+                    90
                 ],
                 "name": "Account",
                 "nodeType": "ContractDefinition",
@@ -166,7 +160,7 @@
                         "mutability": "mutable",
                         "name": "bankAccount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 92,
+                        "scope": 90,
                         "src": "1181:27:0",
                         "stateVariable": true,
                         "storageLocation": "default",
@@ -192,7 +186,7 @@
                         "mutability": "mutable",
                         "name": "amount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 92,
+                        "scope": 90,
                         "src": "1261:22:0",
                         "stateVariable": true,
                         "storageLocation": "default",
@@ -218,7 +212,7 @@
                         "mutability": "mutable",
                         "name": "receiverSenderBankAccount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 92,
+                        "scope": 90,
                         "src": "1336:41:0",
                         "stateVariable": true,
                         "storageLocation": "default",
@@ -244,7 +238,7 @@
                         "mutability": "mutable",
                         "name": "transactionReason",
                         "nodeType": "VariableDeclaration",
-                        "scope": 92,
+                        "scope": 90,
                         "src": "1440:33:0",
                         "stateVariable": true,
                         "storageLocation": "default",
@@ -270,7 +264,7 @@
                         "mutability": "mutable",
                         "name": "transactionHash",
                         "nodeType": "VariableDeclaration",
-                        "scope": 92,
+                        "scope": 90,
                         "src": "1518:31:0",
                         "stateVariable": true,
                         "storageLocation": "default",
@@ -386,7 +380,7 @@
                             "parameters": [],
                             "src": "1689:0:0"
                         },
-                        "scope": 92,
+                        "scope": 90,
                         "src": "1654:78:0",
                         "stateMutability": "nonpayable",
                         "virtual": false,
@@ -464,7 +458,7 @@
                             ],
                             "src": "1866:9:0"
                         },
-                        "scope": 92,
+                        "scope": 90,
                         "src": "1821:89:0",
                         "stateMutability": "view",
                         "virtual": false,
@@ -567,7 +561,7 @@
                             "parameters": [],
                             "src": "2343:0:0"
                         },
-                        "scope": 92,
+                        "scope": 90,
                         "src": "2302:74:0",
                         "stateMutability": "nonpayable",
                         "virtual": false,
@@ -645,7 +639,7 @@
                             ],
                             "src": "2423:6:0"
                         },
-                        "scope": 92,
+                        "scope": 90,
                         "src": "2382:77:0",
                         "stateMutability": "view",
                         "virtual": false,
@@ -817,7 +811,7 @@
                             "parameters": [],
                             "src": "2805:0:0"
                         },
-                        "scope": 92,
+                        "scope": 90,
                         "src": "2714:193:0",
                         "stateMutability": "nonpayable",
                         "virtual": false,
@@ -825,82 +819,55 @@
                     },
                     {
                         "body": {
-                            "id": 72,
+                            "id": 70,
                             "nodeType": "Block",
-                            "src": "2998:41:0",
+                            "src": "3002:41:0",
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 70,
+                                        "id": 68,
                                         "name": "transactionReason",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
                                         "referencedDeclaration": 9,
-                                        "src": "3015:17:0",
+                                        "src": "3019:17:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_storage",
                                             "typeString": "string storage ref"
                                         }
                                     },
-                                    "functionReturnParameters": 69,
-                                    "id": 71,
+                                    "functionReturnParameters": 67,
+                                    "id": 69,
                                     "nodeType": "Return",
-                                    "src": "3008:24:0"
+                                    "src": "3012:24:0"
                                 }
                             ]
                         },
-                        "functionSelector": "8baa14f4",
-                        "id": 73,
+                        "functionSelector": "7d25e39d",
+                        "id": 71,
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getReason",
                         "nodeType": "FunctionDefinition",
                         "parameters": {
-                            "id": 66,
+                            "id": 64,
                             "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 65,
-                                    "mutability": "mutable",
-                                    "name": "_transactionHash",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 73,
-                                    "src": "2932:30:0",
-                                    "stateVariable": false,
-                                    "storageLocation": "memory",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_string_memory_ptr",
-                                        "typeString": "string"
-                                    },
-                                    "typeName": {
-                                        "id": 64,
-                                        "name": "string",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "2932:6:0",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_string_storage_ptr",
-                                            "typeString": "string"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "2931:32:0"
+                            "parameters": [],
+                            "src": "2931:36:0"
                         },
                         "returnParameters": {
-                            "id": 69,
+                            "id": 67,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 68,
+                                    "id": 66,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73,
-                                    "src": "2984:13:0",
+                                    "scope": 71,
+                                    "src": "2988:13:0",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -908,10 +875,10 @@
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 67,
+                                        "id": 65,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2984:6:0",
+                                        "src": "2988:6:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_storage_ptr",
                                             "typeString": "string"
@@ -920,34 +887,34 @@
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2983:15:0"
+                            "src": "2987:15:0"
                         },
-                        "scope": 92,
-                        "src": "2913:126:0",
+                        "scope": 90,
+                        "src": "2913:130:0",
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
                         "body": {
-                            "id": 82,
+                            "id": 80,
                             "nodeType": "Block",
-                            "src": "3126:71:0",
+                            "src": "3130:71:0",
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 80,
+                                        "id": 78,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 78,
+                                            "id": 76,
                                             "name": "receiverSenderBankAccount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
                                             "referencedDeclaration": 7,
-                                            "src": "3136:25:0",
+                                            "src": "3140:25:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bytes15",
                                                 "typeString": "bytes15"
@@ -956,48 +923,48 @@
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 79,
+                                            "id": 77,
                                             "name": "_receiverSenderBankAccount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 75,
-                                            "src": "3164:26:0",
+                                            "referencedDeclaration": 73,
+                                            "src": "3168:26:0",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bytes15",
                                                 "typeString": "bytes15"
                                             }
                                         },
-                                        "src": "3136:54:0",
+                                        "src": "3140:54:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes15",
                                             "typeString": "bytes15"
                                         }
                                     },
-                                    "id": 81,
+                                    "id": 79,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "3136:54:0"
+                                    "src": "3140:54:0"
                                 }
                             ]
                         },
                         "functionSelector": "cc099e7b",
-                        "id": 83,
+                        "id": 81,
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "setReceiverSenderBankAccount",
                         "nodeType": "FunctionDefinition",
                         "parameters": {
-                            "id": 76,
+                            "id": 74,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 75,
+                                    "id": 73,
                                     "mutability": "mutable",
                                     "name": "_receiverSenderBankAccount",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 83,
-                                    "src": "3083:34:0",
+                                    "scope": 81,
+                                    "src": "3087:34:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1005,10 +972,10 @@
                                         "typeString": "bytes15"
                                     },
                                     "typeName": {
-                                        "id": 74,
+                                        "id": 72,
                                         "name": "bytes15",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3083:7:0",
+                                        "src": "3087:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes15",
                                             "typeString": "bytes15"
@@ -1017,71 +984,71 @@
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3082:36:0"
+                            "src": "3086:36:0"
                         },
                         "returnParameters": {
-                            "id": 77,
+                            "id": 75,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "3126:0:0"
+                            "src": "3130:0:0"
                         },
-                        "scope": 92,
-                        "src": "3045:152:0",
+                        "scope": 90,
+                        "src": "3049:152:0",
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
                         "body": {
-                            "id": 90,
+                            "id": 88,
                             "nodeType": "Block",
-                            "src": "3272:49:0",
+                            "src": "3276:49:0",
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 88,
+                                        "id": 86,
                                         "name": "receiverSenderBankAccount",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
                                         "referencedDeclaration": 7,
-                                        "src": "3289:25:0",
+                                        "src": "3293:25:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes15",
                                             "typeString": "bytes15"
                                         }
                                     },
-                                    "functionReturnParameters": 87,
-                                    "id": 89,
+                                    "functionReturnParameters": 85,
+                                    "id": 87,
                                     "nodeType": "Return",
-                                    "src": "3282:32:0"
+                                    "src": "3286:32:0"
                                 }
                             ]
                         },
                         "functionSelector": "d8284f63",
-                        "id": 91,
+                        "id": 89,
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getReceiverSenderBankAccount",
                         "nodeType": "FunctionDefinition",
                         "parameters": {
-                            "id": 84,
+                            "id": 82,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "3240:2:0"
+                            "src": "3244:2:0"
                         },
                         "returnParameters": {
-                            "id": 87,
+                            "id": 85,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 86,
+                                    "id": 84,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 91,
-                                    "src": "3263:7:0",
+                                    "scope": 89,
+                                    "src": "3267:7:0",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1089,10 +1056,10 @@
                                         "typeString": "bytes15"
                                     },
                                     "typeName": {
-                                        "id": 85,
+                                        "id": 83,
                                         "name": "bytes15",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3263:7:0",
+                                        "src": "3267:7:0",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes15",
                                             "typeString": "bytes15"
@@ -1101,25 +1068,25 @@
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3262:9:0"
+                            "src": "3266:9:0"
                         },
-                        "scope": 92,
-                        "src": "3203:118:0",
+                        "scope": 90,
+                        "src": "3207:118:0",
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
                     }
                 ],
-                "scope": 93,
-                "src": "1158:2165:0"
+                "scope": 91,
+                "src": "1158:2169:0"
             }
         ],
-        "src": "36:3288:0"
+        "src": "36:3292:0"
     },
     "functionHashes": {
         "getBalance()": "12065fe0",
         "getBankAccount()": "19e4540b",
-        "getReason(string)": "8baa14f4",
+        "getReason()": "7d25e39d",
         "getReceiverSenderBankAccount()": "d8284f63",
         "setBalance(uint256)": "fb1669ca",
         "setReason(string,string)": "18e0747b",
@@ -1127,14 +1094,14 @@
     },
     "gasEstimates": {
         "creation": {
-            "codeDepositCost": "265400",
+            "codeDepositCost": "233400",
             "executionCost": "infinite",
             "totalCost": "infinite"
         },
         "external": {
             "getBalance()": "999",
             "getBankAccount()": "1070",
-            "getReason(string)": "infinite",
+            "getReason()": "infinite",
             "getReceiverSenderBankAccount()": "1072",
             "setBalance(uint256)": "20255",
             "setReason(string,string)": "infinite",
