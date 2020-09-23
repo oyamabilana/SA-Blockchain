@@ -14,7 +14,7 @@ const deploy = async () => {
   let abi = JSON.parse(fs.readFileSync('bin/contracts/Account.abi').toString())
   let bytecode = fs.readFileSync('bin/contracts/Account.bin').toString()
 
-  await web3.eth.getAccounts().then((accounts) => blockchainUsrAccount = accounts[1])
+  await web3.eth.getAccounts().then((accounts) => blockchainUsrAccount = accounts[2])
 
   let check = await accountExist(bankAccount)
 
