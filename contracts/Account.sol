@@ -22,11 +22,12 @@ pragma solidity ^0.7.1;
 
 contract Account{
 
-    bytes15 private bankAccount;                    //This account bank account
-    uint    private amount;                         //This account balance
-    bytes15 private receiverSenderBankAccount;    //The bank account number of the recipient or sender 
-    string  private transactionReason;              //Why the money was spent
-    string  private transactionHash;                //referres to a transaction that was initiated by this account via the bank oracle
+    bytes15 public bankAccount;                    //This account bank account
+    uint    public amount;                         //This account balance
+    bytes15 public receiverSenderBankAccount;      //The bank account number of the recipient or sender 
+    string  public transactionReason;              //Why the money was spent
+    string  public transactionHash;                //referres to a transaction that was initiated by this account via the bank oracle
+    address public owner;                          //address that initiated this contract
 
     constructor(bytes15  _bankAccount) {
         bankAccount = _bankAccount;
@@ -74,5 +75,11 @@ contract Account{
 
     function getReceiverSenderBankAccount() public view returns(bytes15) {
         return receiverSenderBankAccount;
+    }
+
+    modifier onlyOwner{
+        require(owner == msg.sender,
+        "Denied: Sender not authorized");
+        _;
     }
 }

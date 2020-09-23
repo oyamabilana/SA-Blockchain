@@ -8,7 +8,7 @@ const {masterContract} = require('./../tests/accountMaster')
 let web3 = new Web3("http://localhost:8545")
 
 var blockchainUsrAccount;
-var bankAccount = "2222222222"
+var bankAccount = "55555"
 
 const deploy = async () => {
   let abi = JSON.parse(fs.readFileSync('bin/contracts/Account.abi').toString())
@@ -24,15 +24,18 @@ const deploy = async () => {
       deployedContract.deploy({
       data: bytecode,
       arguments: [web3.utils.asciiToHex(bankAccount)]
-      }).send({
+      })
+      .send({
         from: blockchainUsrAccount,
         gas: 1500000,
         gasPrice: web3.utils.toWei('0.00003', 'ether')
-      }).then((newContractInstance) => {
+      })
+      .then((newContractInstance) => {
         deployedContract.options.address = newContractInstance.options.address
         console.log("deployer >> Bank contract created:", newContractInstance.options.address)
         addAccount(newContractInstance.options.address, bankAccount,blockchainUsrAccount,1500000)
-    });
+    })
+    .catch(error => console.log("deployer >>Failed: Could not deploy contract, check send() parameters"));
   }else{console.log("deployer >> Denied: This bank account already has an associated contract")}
 }
 

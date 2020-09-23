@@ -11,13 +11,13 @@ web3.eth.getAccounts().then((accounts) => {
     //account = accounts[1]
     //addAccount();
     //console.log(accountExist('0000000000'))
-    getAllAccounts().then((result) => console.log(result))
+    //getAllAccounts().then((result) => console.log(result))
 })
 
 let abi = JSON.parse(fs.readFileSync('bin/contracts/AccountMaster.abi').toString())
 
 let contract = new web3.eth.Contract(abi);
-contract.options.address = "0x4d54313A4290C299610a6d3409fAcbd5a5D32877"
+contract.options.address = fs.readFileSync('./deployment/account-master-address').toString()
 
 exports.masterContract = contract; 
 exports.addAccount = async function(contractAddress,bankAccount,usrAddress, gasAmount){
@@ -34,7 +34,7 @@ exports.accountExist = async function (bankAccount){
     return returnValue
 }
 
-let getAllAccounts = async function(){
+exports.getAllAccounts = async function(){
     let accountsMap = new Map()
     const CONTRACT_ADDRESSES_ROW =0;
     const BANK_ACCOUNTS_ROW=1;
