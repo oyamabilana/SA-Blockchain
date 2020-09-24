@@ -8,8 +8,14 @@ pragma solidity ^0.7.1;
 
 
 *Only two types of transactions initiated by 2 types of callers can write to this contract
-*The sender is an oracle bringing in data from the bank API, can modify only amount, receipient or sender bank account 
-*The sender is an app bringing in data about the reason for a transaction, can only modify the reason for the transaction based on the transaction hash
+**The sender is an oracle bringing in data from the bank API.
+*1 - updates balance
+*2 - updates the receiver or sender bank account
+*3 - resets transaction reason state variable to empty string
+*4 - resets transaction hash state variable to empty string
+**The sender is an app bringing in data about the reason for a transaction.
+*1 - sets/updates the transaction hash state variable to a valid past transaction hash originating from this contract
+*2 - updates transaction reason
 *The caller will only read data.
 
 *About storage
@@ -28,16 +34,12 @@ contract Account{
     string  public transactionReason;              //Why the money was spent
     string  public transactionHash;                //referres to a transaction that was initiated by this account via the bank oracle
     address public owner;                          //address that initiated this contract
+    address public bankOracle;
 
     constructor(bytes15  _bankAccount) {
         bankAccount = _bankAccount;
-    }
-
-    /*
-    Retrieve the bank account associated with this contract address
-     */
-    function getBankAccount() public view returns(bytes32){
-        return bankAccount;
+        owner = msg.sender;
+        bankOracle = msg.sender; //TODO: Change this before finalising
     }
 
     /*
@@ -47,12 +49,10 @@ contract Account{
     *recorded on the final balance
     *@params _amount the current balance of the real bank account
     */
-    function setBalance(uint _amount) public {
+    function setBalance(uint _amount) onlyBank public {
         amount = _amount;
-    }
-
-    function getBalance() public view returns(uint){
-        return amount;
+        transactionReason = ""; 
+        transactionHash   = ""; 
     }
 
     /*
@@ -60,16 +60,16 @@ contract Account{
     *@params reason for why the transaction was made
     *@params transactionHash of the bank transaction - when the contract amount changed
     */
-    function setReason(string memory _transactionrReason,string memory _transactionHash) public{
+    function setReason(string memory _transactionrReason,string memory _transactionHash) onlyOwner public{
         transactionReason = _transactionrReason;
         transactionHash   = _transactionHash;
     }
 
-    function getReason(/*string memory _transactionHash*/) public view returns(string memory){
+    function getReason(/*string memory _transactionHash*/) public view returns(string memory) {
         return transactionReason;
     }
 
-    function setReceiverSenderBankAccount(bytes15 _receiverSenderBankAccount) public {
+    function setReceiverSenderBankAccount(bytes15 _receiverSenderBankAccount) onlyBank public {
         receiverSenderBankAccount = _receiverSenderBankAccount;
     }
 
@@ -80,6 +80,12 @@ contract Account{
     modifier onlyOwner{
         require(owner == msg.sender,
         "Denied: Sender not authorized");
+        _;
+    }
+
+    modifier onlyBank{
+        require(bankOracle == msg.sender,
+        "Access denied: Only the bank oracle can execute this transaction");
         _;
     }
 }
