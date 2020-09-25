@@ -80,4 +80,18 @@ contract AccountMaster{
         }
         return false;
     }
+
+    /*
+    *This method takes a bank account numner and returns the mapped contract address
+    *@params _bankAccountNumber the bank account to look up
+    *@returns _contractAddress
+    */
+    function getContractAddress(bytes15 _bankAccountNumber) public view returns(address _contractAddress){
+        for(uint i= 0; i< storedAccounts.length; i++){
+            if(storedAccounts[i].bankAccountNumber == _bankAccountNumber){
+                return storedAccounts[i].contractAddress;
+            }
+        }
+        return NULL;
+    }
 }

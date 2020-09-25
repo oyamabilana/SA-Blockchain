@@ -12,6 +12,8 @@ web3.eth.getAccounts().then((accounts) => {
     //addAccount();
     //console.log(accountExist('0000000000'))
     //getAllAccounts().then((result) => console.log(result))
+    //console.log(getContractAddress("00000"));
+
 })
 
 let abi = JSON.parse(fs.readFileSync('bin/contracts/AccountMaster.abi').toString())
@@ -30,6 +32,14 @@ exports.accountExist = async function (bankAccount){
     var returnValue;
     await contract.methods.accountExist(web3.utils.asciiToHex(bankAccount)).call()
     .then((result) => console.log("accountMaster >> Account exists: ",returnValue = result))
+    .catch(error => console.log("accountMaster >> 1.Denied: Cannot verify bank account\n2.verify bank account format is less than 16 characters"))
+    return returnValue
+}
+
+exports.getContractAddress = async function(bankAccount){
+    var returnValue;
+    await contract.methods.getContractAddress(web3.utils.asciiToHex(bankAccount)).call()
+    .then((result) => console.log("accountMaster >> Contract address for account ",bankAccount," :",returnValue = result))
     .catch(error => console.log("accountMaster >> 1.Denied: Cannot verify bank account\n2.verify bank account format is less than 16 characters"))
     return returnValue
 }
