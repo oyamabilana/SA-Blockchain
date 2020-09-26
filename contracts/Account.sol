@@ -28,19 +28,25 @@ import "./TransactionStore.sol";
 
 contract Account{
 
-    bytes15 public bankAccount;                    //This account bank account
-    uint    public amount;                         //This account balance
-    bytes15 public receiverSenderBankAccount;      //The bank account number of the recipient or sender 
-    address public owner;                          //address that initiated this contract
+    bytes15 public bankAccount;                     //This account bank account
+    uint    public amount;                          //Amount paid or received rounded off to nearest rand
+    uint    public accountBalance;                  //This account balance rounded off to nearest rand
+    bytes15 public receiverSenderBankAccount;       //The bank account number of the recipient or sender 
+    address public owner;                           //address that initiated this contract
     address public bankOracle;
     TransactionStore public transStore;
     address public transactionStoreAddress;
-    bool private transactionStoreCreated = false;
+    bool    private transactionStoreCreated = false;
+    uint8   constant public PAID = 0;
+    uint8   constant public RECEIVED = 1;
+    uint8   public transactionType;
+    event   Transact(uint transactionType,bytes15 receiverSenderBankAccount,uint amount,uint accountBalance, uint timestamp);
 
     constructor(bytes15  _bankAccount) {
         bankAccount = _bankAccount;
         owner = msg.sender;
         bankOracle = 0x38dE5fC74021673Cf5Ac555bf704C56d56c6E862;
+        accountBalance = 100;   //TODO: pass the value to be asigned to accountBalance at first
     }
 
     /**
@@ -55,7 +61,7 @@ contract Account{
     }
 
     /*
-    *This function updates the contract amount/balance to match the bank account balance
+    *This function updates the contract balance to match the bank account balance
     *and the account number of the receipient/sender
     *We mirror the updated balance of the real bank account instead of updating the value
     *by addition or subtracting. This makes sure that bank transaction fees are accurately 
@@ -64,9 +70,18 @@ contract Account{
     *@params _receiverSenderBankAccount of the bank account money was sent to or from
     */
 
-    function bankUpdate(uint _amount, bytes15 _receiverSenderBankAccount) onlyBank public {
-        amount = _amount;
+    function bankUpdate(uint newBalance, bytes15 _receiverSenderBankAccount) onlyBank public {
+        if(newBalance > accountBalance ){
+            transactionType = RECEIVED;
+            amount = newBalance - accountBalance;
+        }
+        else {
+            transactionType = PAID;
+            amount = accountBalance - newBalance;
+        }
+        accountBalance = newBalance;
         receiverSenderBankAccount = _receiverSenderBankAccount;
+        emit Transact(transactionType,_receiverSenderBankAccount,amount,accountBalance, block.timestamp);
     }
 
     /*  

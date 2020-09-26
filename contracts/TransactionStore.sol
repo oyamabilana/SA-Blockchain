@@ -18,6 +18,7 @@ contract TransactionStore{
     address public parentAccount;
     string  public transactionReason;              //Why the money was spent
     string  public transactionHash;                //referres to a transaction that was initiated by this account via the bank oracle
+    event   Reason(string transacionHash, string transactionReason, uint timestamp);
 
     constructor(address _owner, address _parentAccount){
         owner = _owner;
@@ -32,6 +33,7 @@ contract TransactionStore{
     function setReason(string memory _transactionrReason,string memory _transactionHash) onlyOwner public{
         transactionReason = _transactionrReason;
         transactionHash   = _transactionHash;
+        emit Reason(_transactionHash, transactionReason, block.timestamp);
     }
 
     modifier onlyOwner{

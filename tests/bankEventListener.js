@@ -10,9 +10,9 @@ let contract;
 
 let runUpdate = async () => {
     //get the conract with this bank account
-    await getContract("77777");
+    await getContract("33333");
     //update this contract
-    bankUpdate(500,"11111");
+    bankUpdate(1003456,"11111")
 }
 
 let getContract = async (_bankAccount) => {
@@ -29,18 +29,18 @@ function bankUpdate(_amount,_receiverSenderBankAccount){
 
 let test = async () => {
     //get the conract with this bank account
-    await getContract("77777");
+    await getContract("33333");
     contract.methods.amount().call().then((balance) => console.log("Balance: ", balance))
     contract.methods.receiverSenderBankAccount().call().then((result) => console.log("Sender/Receiver: ", web3.utils.toAscii(result)))
     contract.methods.transactionStoreAddress().call().then((addr)=> console.log("Transaction store addr: ", addr))
     contract.methods.bankOracle().call().then((result) => console.log("Bank oracle: ", result))
 }
 
-let getPastEvents = async () => {
-    await getContract("77777")
-    contract.getPastEvents('Transact',{fromBlock: 'earliest', toBlock: 'latest'}).then((event) => console.log(event[1].returnValues))
+let getEvents = async () => {
+    await getContract("33333")
+    contract.once('Transact', {},function(error, event){console.log(event);})
 }
 
-getPastEvents();
+//getEvents();
 //test();
-//runUpdate();
+runUpdate();

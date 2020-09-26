@@ -1,12 +1,16 @@
 const fs = require('fs-extra')
 var Web3 = require('web3');
-const {accountExist} = require('./../tests/accountMaster')
-const {getContractAddress} = require('./../tests/accountMaster')
+const {accountExist} = require('./accountMaster')
+const {getContractAddress} = require('./accountMaster')
 const { Contract } = require('web3-eth-contract');
 let web3 = new Web3("http://localhost:8545")
 
-var bankAccount = "22222"
-var account = "0x18983711e318245dd2c0bECa017f095f23F068cc"; //contract owner address
+/**
+ * This app records reasons for the transactions initiated by the bank oracle
+ */
+
+var bankAccount = "77777"
+var account = "0x99e835F236D0D9E135f4e3433D6EEf992270F4bB"; //contract owner address
 let contract;
 let transactionStore;
 
@@ -34,5 +38,11 @@ async function setReason(_bankAccount,_reason,_transactionHash){
     .send({from: account, gas: 3000000}).then((receipt) => console.log(receipt))
 }
 
+let getPastEvents = async () => {
+    await getTransactionStore("77777")
+    transactionStore.getPastEvents('Reason',{fromBlock: 'earliest', toBlock: 'latest'}).then((event) => console.log(event[0].returnValues))
+}
+
+getPastEvents();
 //getTransactionStore(bankAccount);
-//setReason(bankAccount,"Payed for the Isibaya project", '0x872efcdcc449c9650377ec4ad5d5b40f6e0fd9b22fdd50d8249fb7637715ac0b');
+//setReason(bankAccount,"Payed for the Isibaya project", '0xa39b9643cb2d3374745e2f412f7d49e27f4a814452492f39e1168c2adf7088a4');

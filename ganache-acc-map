@@ -1,8 +1,17 @@
 Index   Owner               Address
 =================================
-0       Bank oracle         0x38dE5fC74021673Cf5Ac555bf704C56d56c6E862
-1       oracle-man-1        0x5466e2E054f0E4eF7a7810504CA8fF58A3312b3B
-2       oracle-man-2        0x18983711e318245dd2c0bECa017f095f23F068cc
-3       oracle-man-3        0x809535Ce03fC0E7B074fe2B372c85137901e8E19
-4       oracle-man-5        0x280F0a20236B326f146efb666972d68e785AAcBc
-10      master-deployer     0x5b6FB0c2C4229cf5C32977942E399D38535b12f7
+0       Bank oracle         0x38dE5fC74021673Cf5Ac555bf704C56d56c6E862-
+1       oracle-man-1        0x5466e2E054f0E4eF7a7810504CA8fF58A3312b3B-
+2       oracle-man-2        0x18983711e318245dd2c0bECa017f095f23F068cc-
+3       oracle-man-3        0x809535Ce03fC0E7B074fe2B372c85137901e8E19-
+4       oracle-man-4        0x280F0a20236B326f146efb666972d68e785AAcBc-
+
+
+5       oracle-man-5        0x13440DD524D1f971694aA52b8e0C622a173F03Ee-
+6       oracle-man-6        0x27682BeD7FF00bB3e55254cb2a3F8cd9B39ebC75-
+7       oracle-man-7        0x99e835F236D0D9E135f4e3433D6EEf992270F4bB-
+8       oracle-man-8        0xB766Bfb304766A1629807d281Af3Cd35d2cAD28D
+9       oracle-man-9        0xd28d1C78da2835873c6619B8c6be716F6257847c
+
+
+----10      master-deployer     0x5b6FB0c2C4229cf5C32977942E399D38535b12f7

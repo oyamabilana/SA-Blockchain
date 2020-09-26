@@ -3,7 +3,12 @@ const Web3 = require('web3')
 let web3 = new Web3("http://localhost:8545")
 //web3.eth.getAccounts(console.log)
 
-var account = "0x5b6FB0c2C4229cf5C32977942E399D38535b12f7";
+/**
+ * Deploye the master contract 
+ * WIll be deployed once and only once 
+ */
+
+var account = "0x5b6FB0c2C4229cf5C32977942E399D38535b12f7"; //master deployer owner address
 let contract;
 
 const deploy = async () => {

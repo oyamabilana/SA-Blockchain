@@ -7,8 +7,14 @@ const {addAccount} = require('./../tests/accountMaster')
 const {masterContract} = require('./../tests/accountMaster')
 let web3 = new Web3("http://localhost:8545")
 
-var account = "0x18983711e318245dd2c0bECa017f095f23F068cc" //contract owner address
-var bankAccount = "22222"
+/**
+ * Deploys an Account contract 
+ * On successfull deployment, the transaction store contract
+ * assocociated with this Account contract is deployed
+ */
+
+var account = "0x99e835F236D0D9E135f4e3433D6EEf992270F4bB" //contract owner address
+var bankAccount = "77777"
 
 const deploy = async () => {
   let abi = JSON.parse(fs.readFileSync('bin/contracts/Account.abi').toString())
