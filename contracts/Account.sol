@@ -40,7 +40,7 @@ contract Account{
     constructor(bytes15  _bankAccount) {
         bankAccount = _bankAccount;
         owner = msg.sender;
-        bankOracle = msg.sender; //TODO: Change this before finalising
+        bankOracle = 0x38dE5fC74021673Cf5Ac555bf704C56d56c6E862;
     }
 
     /**
@@ -56,17 +56,27 @@ contract Account{
 
     /*
     *This function updates the contract amount/balance to match the bank account balance
+    *and the account number of the receipient/sender
     *We mirror the updated balance of the real bank account instead of updating the value
     *by addition or subtracting. This makes sure that bank transaction fees are accurately 
     *recorded on the final balance
     *@params _amount the current balance of the real bank account
+    *@params _receiverSenderBankAccount of the bank account money was sent to or from
     */
-    function setBalance(uint _amount) onlyBank public {
+
+    function bankUpdate(uint _amount, bytes15 _receiverSenderBankAccount) onlyBank public {
         amount = _amount;
+        receiverSenderBankAccount = _receiverSenderBankAccount;
     }
 
-    function setReceiverSenderBankAccount(bytes15 _receiverSenderBankAccount) onlyBank public {
-        receiverSenderBankAccount = _receiverSenderBankAccount;
+    /*  
+    *This function changes the bank oracle that serves data to this contract
+    *Only the bank oracle can authenticate this transaction
+    *e.g. The current bank oracle hands over it's previliges to a new bank oracle
+    *@params _newBankOracle the address of the new bank oracle that will replace the current one
+    */
+    function updateOracle(address _newBankOracle) onlyBank public{
+        bankOracle = _newBankOracle;
     }
 
     modifier onlyOwner{

@@ -1,26 +1,40 @@
 const fs = require('fs-extra')
 var Web3 = require('web3');
+const {accountExist, getContractAddress} = require('./../tests/accountMaster')
 const { Contract } = require('web3-eth-contract');
 let web3 = new Web3("http://localhost:8545")
-
-var account;
-
-web3.eth.getAccounts().then((accounts) => {
-    account = accounts[9]
-    setBalance();
-    setReceiverSender();
-})
-
 let abi = JSON.parse(fs.readFileSync('bin/contracts/Account.abi').toString())
 
-let contract = new web3.eth.Contract(abi);
-contract.options.address = "0x6e702abCba35FF412d5717e0FCe44410eaf3BdBC"
+var account = "0x38dE5fC74021673Cf5Ac555bf704C56d56c6E862"  //bank oracle address
+let contract;
 
-function setBalance(){
-    contract.methods.setBalance(103432).send({from: account}).then((result) => console.log(result))
+let runUpdate = async () => {
+    //get the conract with this bank account
+    await getContract("22222");
+    //update this contract
+    bankUpdate(255035,"4444")
 }
 
-function setReceiverSender(){
-    contract.methods.setReceiverSenderBankAccount(web3.utils.asciiToHex('99999')).send({from: account, gas:3000000})
-    .then((receipt) => console.log('Sender\n', receipt))
+let getContract = async (_bankAccount) => {
+    contract = new web3.eth.Contract(abi);
+    let check = await accountExist(_bankAccount);
+    if(check == true){contract.options.address = await getContractAddress(_bankAccount)}
 }
+
+function bankUpdate(_amount,_receiverSenderBankAccount){
+    contract.methods.bankUpdate(_amount, web3.utils.asciiToHex(_receiverSenderBankAccount))
+    .send({from: account, gas: 3000000})
+    .then((receipt) => console.log("oracle-bank >> contract updated successfully\n",receipt))
+}
+
+let test = async () => {
+    //get the conract with this bank account
+    await getContract("22222");
+    contract.methods.amount().call().then((balance) => console.log("Balance: ", balance))
+    contract.methods.receiverSenderBankAccount().call().then((result) => console.log("Sender/Receiver: ", web3.utils.toAscii(result)))
+    contract.methods.transactionStoreAddress().call().then((addr)=> console.log("Transaction store addr: ", addr))
+    contract.methods.bankOracle().call().then((result) => console.log("Bank oracle: ", result))
+}
+
+test();
+//runUpdate();
